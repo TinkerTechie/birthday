@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Happy Birthday, Brother!</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #f0e0ff;
+      text-align: center;
+      overflow: hidden;
+      margin: 0;
+      padding: 20px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    h1 {
+      color: #ff6b6b;
+      font-size: 3em;
+      margin-bottom: 20px;
+      text-shadow: 3px 3px 0 #fff, 5px 5px 0 #ffcc00;
+      animation: pulse 2s infinite alternate;
+    }
+    
+    p {
+      color: #666;
+      font-size: 1.5em;
+      margin-bottom: 40px;
+    }
+    
+    .birthday-cake {
+      width: 200px;
+      height: 180px;
+      margin: 20px auto;
+      position: relative;
+    }
+    
+    .cake {
+      width: 180px;
+      height: 100px;
+      background: linear-gradient(#dab4ff, #8a2be2);
+      border-radius: 10px 10px 0 0;
+      position: absolute;
+      bottom: 60px;
+      left: 10px;
+    }
+    
+    .icing {
+      width: 180px;
+      height: 20px;
+      background: #fff;
+      border-radius: 10px 10px 0 0;
+      position: absolute;
+      bottom: 80px;
+      left: 10px;
+      box-shadow: 0 10px 5px rgba(255, 192, 203, 0.5);
+    }
+    
+    .candle {
+      width: 10px;
+      height: 60px;
+      background: #fff;
+      border-radius: 5px;
+      position: absolute;
+      bottom: 140px;
+      left: 95px;
+    }
+    
+    .flame {
+      width: 18px;
+      height: 24px;
+      background: radial-gradient(#fdfd96, #fdcf58, #d92929);
+      border-radius: 50% 50% 20% 20%;
+      position: absolute;
+      bottom: 200px;
+      left: 86px;
+      animation: flicker 0.5s infinite alternate;
+    }
+    
+    .balloons {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+    
+    .balloon {
+      position: absolute;
+      width: 50px;
+      height: 60px;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: float 8s infinite linear;
+      transform-origin: 50% 400px;
+    }
+    
+    .balloon:nth-child(1) { background: #ffb6c1; left: 10%; animation-duration: 12s; }
+    .balloon:nth-child(2) { background: #add8e6; left: 20%; animation-duration: 10s; }
+    .balloon:nth-child(3) { background: #ff9999; left: 30%; animation-duration: 9s; }
+    .balloon:nth-child(4) { background: #d8bfd8; left: 40%; }
+    .balloon:nth-child(5) { background: #ffcc99; left: 50%; }
+    .balloon:nth-child(6) { background: #b0e0e6; left: 60%; }
+    .balloon:nth-child(7) { background: #ffb347; left: 70%; }
+    .balloon:nth-child(8) { background: #f6a4c0; left: 80%; animation-duration: 11s; }
+    .balloon:nth-child(9) { background: #c8a2c8; left: 90%; animation-duration: 13s; }
+    
+    .confetti-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      pointer-events: none;
+      z-index: 10;
+    }
+    
+    .confetti {
+      width: 8px;
+      height: 12px;
+      background: #ffcc00;
+      margin: 2px;
+      position: relative;
+      animation: confetti 5s infinite ease-in;
+      opacity: 0;
+    }
+    
+    .confetti:nth-child(2n) { background: #fe5f55; animation-delay: 0.4s; }
+    .confetti:nth-child(3n) { background: #62b3e2; animation-delay: 0.2s; }
+    .confetti:nth-child(5n) { background: #94d0cc; animation-delay: 0.8s; }
+    .confetti:nth-child(7n) { background: #f0a696; animation-delay: 0.6s; }
+    .confetti:nth-child(11n) { background: #f2f7a1; animation-delay: 0.3s; }
+    
+    @keyframes float {
+      0% { transform: rotate(0deg) translateY(0px); }
+      100% { transform: rotate(360deg) translateY(-600px); }
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.05); }
+    }
+    
+    @keyframes flicker {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.3); opacity: 0.7; }
+    }
+    
+    @keyframes confetti {
+      0% { transform: translateY(-200px) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="balloons">
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+  </div>
+  
+  <h1>Happy Birthday, Brother!</h1>
+  
+  <div class="birthday-cake">
+    <div class="cake"></div>
+    <div class="icing"></div>
+    <div class="candle"></div>
+    <div class="flame"></div>
+  </div>
+  
+  <p>Wishing you a fantastic birthday filled with joy, brother!</p>
+  
+  <!-- Confetti effect -->
+  <div class="confetti-container">
+    <!-- 80 pieces of confetti -->
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+  </div>
+</body>
+</html>
